@@ -1,0 +1,21 @@
+<%= form_for(@carpool) do |f| %>
+  <% if @carpool.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@carpool.errors.count, "error") %> prohibited this carpool from being saved:</h2>
+
+      <ul>
+      <% @carpool.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
