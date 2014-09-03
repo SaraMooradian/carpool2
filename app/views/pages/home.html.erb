@@ -1,9 +1,13 @@
 <div class="jumbotron center">
      <h1>Welcome to Minivan!</h1>
      <% if user_signed_in? %>
-          What would you like to do?<br>
+          What would you like to do?<p><p>
+          <%= link_to "View Your Carpools", carpools_path(@index), class: "btn btn-default btn-lg"%>
+          </p><p>
+          
+          <%= link_to "Create a New Carpool", new_carpool_path, class: "btn btn-default btn-lg"%>
+          </p>
          
-
      <% else %>
        <p>
          <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>

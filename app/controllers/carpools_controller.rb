@@ -1,6 +1,6 @@
 class CarpoolsController < ApplicationController
   before_action :set_carpool, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :show]
   
   def index
     @carpools = Carpool.all
@@ -10,14 +10,14 @@ class CarpoolsController < ApplicationController
   end
 
   def new
-    @carpool = Carpool.new
+    @carpool = current_user.carpools.build
   end
 
   def edit
   end
 
   def create
-    @carpool = Carpool.new(carpool_params)
+    @carpool = current_user.carpools.build(carpool_params)
       if @carpool.save
         redirect_to @carpool, notice: 'Carpool was successfully created.' 
       else
@@ -35,7 +35,7 @@ class CarpoolsController < ApplicationController
 
   def destroy
     @carpool.destroy
-    redirect_to carpools_url, notice: 'Carpool was successfully destroyed.' 
+    redirect_to carpools_url 
   end
 
   private
@@ -43,7 +43,10 @@ class CarpoolsController < ApplicationController
     def set_carpool
       @carpool = Carpool.find(params[:id])
     end
-
+  def correct_user
+    @carpool = current_user.carpools.find_by(params[:id])
+    redirect_to carpools_path, notice: "Not authorized to edit this carpool" if @carpool.nil?
+  end
     # Never trust parameters from the scary internet, only allow the white list through.
     def carpool_params
       params.require(:carpool).permit(:description)
