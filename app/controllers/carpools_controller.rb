@@ -33,10 +33,7 @@ class CarpoolsController < ApplicationController
     end
   end
 
-  def destroy
-    @carpool.destroy
-    redirect_to carpools_url 
-  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
