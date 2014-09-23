@@ -1,6 +1,7 @@
 class CarpoolsController < ApplicationController
   before_action :set_carpool, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show]
   
   def index
     @carpools = Carpool.all
@@ -33,7 +34,10 @@ class CarpoolsController < ApplicationController
     end
   end
 
-  
+  def destroy
+    @carpool.destroy
+    redirect_to carpools_url 
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
