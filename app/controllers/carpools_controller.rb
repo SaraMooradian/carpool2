@@ -1,7 +1,7 @@
 class CarpoolsController < ApplicationController
   before_action :set_carpool, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!
   
   def index
     @carpools = Carpool.all

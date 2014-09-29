@@ -3,8 +3,9 @@
 <p>
   <strong>Description:</strong>
   <%= @carpool.description %>
-</p>
+ </p>
 <% if @carpool.user == current_user %>
 <%= link_to 'Edit', edit_carpool_path(@carpool) %> |
-<%= link_to 'Back', carpools_path %>
+
 <% end %>
+<%= link_to 'Back', carpools_path %>
