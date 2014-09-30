@@ -6,7 +6,11 @@ $navbar-inverse-bg: #2980b9;
 $navbar-inverse-link-color: white;
 $brand-primary: #27ae60;
 $jumbotron-bg: #95a5a6;
+
+// import bootstrap-sprockets before bootstrap if using bootstrap >= 3.2
+@import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 
 
 .center {
