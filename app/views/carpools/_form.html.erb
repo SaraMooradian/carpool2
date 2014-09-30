@@ -15,14 +15,16 @@
     <%= f.label :description %>
     <%= f.text_field :description, class: "form-control" %>
     
-    <%= f.label "Start Time" %>
-    ##<%= f.text_field :starttime, class: "form-control" %>
-    <div class="container">
+    
+   <div class="container">
     <div class="row">
         <div class='col-sm-2'>
             <div class="form-group">
-                <div class='input-group date' id='starttime'>
-                    <input type='text' class="form-control" />
+                <%= label_tag :starttime, 'Start Time' %>
+                <div class='input-group date' id='datetimepicker4'>
+                  
+                <%= text_field_tag :starttime, nil, class: "form-control", :autofocus => true %>
+      
                     <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
                     </span>
                 </div>
@@ -30,16 +32,15 @@
         </div>
         <script type="text/javascript">
             $(function () {
-                $('starttime').datetimepicker({
+                $('#datetimepicker4').datetimepicker({
                     pickDate: false
                 });
             });
         </script>
     </div>
 </div>
-     <%= f.label "End Time" %>
+  <%= f.label "End Time" %>
     <%= f.text_field :endtime, class: "form-control" %>
-   
   </div>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
