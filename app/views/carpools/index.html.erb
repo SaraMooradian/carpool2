@@ -5,28 +5,33 @@
     <tr>
       <th>Description</th>
       <th>User</th>
+      <th> Start Time</th>
+      <th> End Time</th>
       <th colspan="4"></th>
     </tr>
   </thead>
   <tbody> 
-
     <% @carpools.each do |carpool| %>
       <tr>
       <% if current_user.admin? %>
         <td><%= carpool.description %></td>
-          <td><%= carpool.user.email %></td>
-        
+          <td><%= carpool.user.name %></td>
+            <td><%= carpool.starttime %></td>
+            <td><%= carpool.endtime %></td>
+          <td><%= link_to 'Show', carpool_path(carpool) %></td>
           <td><%= link_to 'Edit', edit_carpool_path(carpool) %></td>
           <td><%= link_to 'Destroy', carpool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <%end%>
+      <%else%>
         <% if carpool.user == current_user %>
         <td><%= carpool.description %></td>
-        <td><%= carpool.user.email if carpool.user %></td>
-      
+        <td><%= carpool.user.name if carpool.user %></td>
+        <td><%= carpool.starttime %></td>
+        <td><%= carpool.endtime %></td>
         <td><%= link_to 'Show', carpool_path(carpool) %></td>
         <td><%= link_to 'Edit', edit_carpool_path(carpool) %></td>
         <td><%= link_to 'Destroy', carpool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     
+        <%end%>
         <%end%>
       </tr>
     <% end %>

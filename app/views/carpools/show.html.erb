@@ -3,6 +3,8 @@
 <p>
   <strong>Description:</strong>
   <%= @carpool.description %>
+  <%= @carpool.starttime %>
+  <%= @carpool.endtime %>
  </p>
 <% if @carpool.user == current_user %>
 <%= link_to 'Edit', edit_carpool_path(@carpool) %> |

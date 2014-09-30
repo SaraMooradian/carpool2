@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929220407) do
+ActiveRecord::Schema.define(version: 20140930004616) do
 
   create_table "admins", force: true do |t|
     t.string   "email",              default: "", null: false
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20140929220407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.string   "starttime"
-    t.string   "endtime"
+    t.datetime "starttime",   limit: 255
+    t.datetime "endtime",     limit: 255
   end
 
   add_index "carpools", ["user_id"], name: "index_carpools_on_user_id"
