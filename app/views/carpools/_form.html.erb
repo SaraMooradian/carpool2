@@ -19,23 +19,23 @@
 <div class="container">
     <div class="row">
 
- <%= f.label :starttime %><br />
- <%= time_field(:carpool, :starttime)%>    
+ <%= f.label :starttime, "Start Time" %><br />
+ <%= time_select(:carpool, :starttime, {ampm: true})%>    
 
 <div class="container">
 <div class="row">
- <%= f.label :endtime %><br />
-   <%= time_field(:carpool, :endtime)%>    
+ <%= f.label :endtime, "End Time" %><br />
+<%= time_select(:carpool, :endtime, {ampm: true})%>    
 
 <div class="container">
 <div class="row">
-<%= f.label :startdate %><br />
- <%= date_field(:carpool, :startdate)%>    
+<%= f.label :startdate, "Start Date"%><br />
+ <%= date_select(:carpool, :startdate)%>    
 
 <div class="container">
 <div class="row">
-<%= f.label :enddate %><br />
- <%= date_field(:carpool, :enddate)%>    
+<%= f.label :enddate, "End Date" %><br />
+ <%= date_select(:carpool, :enddate)%>    
 <br >
 
   <div class="form-group">
