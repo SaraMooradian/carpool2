@@ -3,5 +3,6 @@ class Carpool < ActiveRecord::Base
 	has_many :starttimes
 	has_many :endtimes
 	
+	validates :description, :starttime, :endtime, presence: true
 
 end
