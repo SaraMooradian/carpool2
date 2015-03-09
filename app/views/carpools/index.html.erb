@@ -6,9 +6,11 @@
     <tr>
       <th>Description</th>
       <th>User</th>
-      <th> Start Time</th>
-      <th> End Time</th>
-      <th colspan="4"></th>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th colspan="6"></th>
     </tr>
   </thead>
   <tbody> 
@@ -19,6 +21,9 @@
         <td><%= carpool.user.name if carpool.user %></td>
         <td><%= carpool.starttime %></td>
         <td><%= carpool.endtime %></td>
+        <td><%= carpool.startdate %></td>
+        <td><%= carpool.enddate %></td>
+
         <td><%= link_to 'Show', carpool_path(carpool) %></td>
         <td><%= link_to 'Edit', edit_carpool_path(carpool) %></td>
         <td><%= link_to 'Destroy', carpool, method: :delete, data: { confirm: 'Are you sure?' } %></td>
