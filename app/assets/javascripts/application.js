@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
 //= require bootstrap
+//= require moment
+//= require bootstrap-datetimepicker
 //= require turbolinks
 
 //= require_tree .
-//= require moment
-//= require bootstrap-datetimepicker
-

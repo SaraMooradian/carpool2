@@ -10,4 +10,8 @@ protected
    devise_parameter_sanitizer.for(:sign_up) << :name
    devise_parameter_sanitizer.for(:account_update) << :name
  end
+
+ def time_format(datetime)
+  datetime.strftime('%H:%M') unless datetime.blank?
+end
 end

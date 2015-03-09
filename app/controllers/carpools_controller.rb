@@ -8,13 +8,16 @@ class CarpoolsController < ApplicationController
   end
 
   def show
+    @carpool = Carpool.find(params[:id])
   end
 
   def new
-    @carpool = current_user.carpools.build
+    @carpool = current_user.carpools.build  
   end
 
-  def edit
+ 
+   def edit
+    @carpool = current_user.carpools.find(params[:id])
   end
 
   def create
@@ -26,7 +29,9 @@ class CarpoolsController < ApplicationController
     end
   end
 
+
   def update
+    @carpool = Carpool.find(params[:id])
       if @carpool.update(carpool_params)
        redirect_to @carpool, notice: 'Carpool was successfully updated.' 
       else
@@ -38,6 +43,7 @@ class CarpoolsController < ApplicationController
     @carpool.destroy
     redirect_to carpools_url 
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
