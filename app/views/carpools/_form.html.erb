@@ -24,14 +24,19 @@
 
 <div class="container">
 <div class="row">
-
-
  <%= f.label :endtime %><br />
    <%= time_field(:carpool, :endtime)%>    
 
-    </div>
-</div>
+<div class="container">
+<div class="row">
+<%= f.label :startdate %><br />
+ <%= date_field(:carpool, :startdate)%>    
 
+<div class="container">
+<div class="row">
+<%= f.label :enddate %><br />
+ <%= date_field(:carpool, :enddate)%>    
+<br >
 
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
