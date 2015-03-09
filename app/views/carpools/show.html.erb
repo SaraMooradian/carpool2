@@ -1,11 +1,23 @@
 	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @carpool.description %>
-  <%= @carpool.starttime %>
-  <%= @carpool.endtime %>
- </p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th> Start Time</th>
+      <th> End Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+<tbody>
+<tr>
+  <td><%= @carpool.description %></td>
+<td>  <%= @carpool.starttime %></td>
+<td>  <%= @carpool.endtime %></td>
+ 
+ </tr>
+ </tbody>
+ </table>
 <% if @carpool.user == current_user %>
 <%= link_to 'Edit', edit_carpool_path(@carpool) %> |
 
