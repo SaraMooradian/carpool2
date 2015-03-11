@@ -10,7 +10,8 @@
       <th>End Time</th>
       <th>Start Date</th>
       <th>End Date</th>
-      <th colspan="6"></th>
+      <th>Location</th>
+      <th colspan="7"></th>
     </tr>
   </thead>
   <tbody> 
@@ -23,6 +24,7 @@
         <td><%= carpool.endtime %></td>
         <td><%= carpool.startdate %></td>
         <td><%= carpool.enddate %></td>
+        <td><%= carpool.location %></td>
 
         <td><%= link_to 'Show', carpool_path(carpool) %></td>
         <td><%= link_to 'Edit', edit_carpool_path(carpool) %></td>

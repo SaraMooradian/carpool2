@@ -56,6 +56,6 @@ class CarpoolsController < ApplicationController
   end
     # Never trust parameters from the scary internet, only allow the white list through.
     def carpool_params
-      params.require(:carpool).permit(:description, :starttime, :endtime, :startdate, :enddate)
+      params.require(:carpool).permit(:description, :starttime, :endtime, :startdate, :enddate, :location)
     end
 end

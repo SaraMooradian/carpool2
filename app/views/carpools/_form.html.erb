@@ -19,26 +19,44 @@
 <div class="container">
     <div class="row">
 
- <%= f.label :starttime, "Start Time" %><br />
+ <%= f.label :starttime, "Start Time" %>
  <%= time_select(:carpool, :starttime, {ampm: true})%>    
 
 <div class="container">
 <div class="row">
- <%= f.label :endtime, "End Time" %><br />
+ <%= f.label :endtime, "End Time" %>
 <%= time_select(:carpool, :endtime, {ampm: true})%>    
 
+<div class="well">
+  <div id="datetimepicker3" class="input-append">
+    <input data-format="hh:mm:ss" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function() {
+    $('#datetimepicker3').datetimepicker({
+      pickDate: false
+    });
+  });
+</script>
 <div class="container">
 <div class="row">
-<%= f.label :startdate, "Start Date"%><br />
+<%= f.label :startdate, "Start Date"%>
  <%= date_select(:carpool, :startdate)%>    
 
 <div class="container">
 <div class="row">
-<%= f.label :enddate, "End Date" %><br />
+<%= f.label :enddate, "End Date" %>
  <%= date_select(:carpool, :enddate)%>    
-<br >
-
-  <div class="form-group">
+</br >
+<div class="form-group">
+  <%= f.label :location %>
+    <%= f.text_field :location, class: "form-control"%>
+  </div>
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
