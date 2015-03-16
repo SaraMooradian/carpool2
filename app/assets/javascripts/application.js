@@ -19,3 +19,13 @@
 //= require turbolinks
 
 //= require_tree .
+
+
+$(function() {
+    $('.datetimerpick').datetimepicker({
+      pickDate: false
+    });
+
+     $('.datepick').datepicker({
+    });
+  });
