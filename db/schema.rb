@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20150309225935) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.time     "starttime",   limit: 255
-    t.time     "endtime",     limit: 255
-    t.date     "startdate"
-    t.date     "enddate"
+    t.string     "starttime",   limit: 255
+    t.string     "endtime",     limit: 255
+    t.string     "startdate"
+    t.string     "enddate"
   end
 
   add_index "carpools", ["user_id"], name: "index_carpools_on_user_id"

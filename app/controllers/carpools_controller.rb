@@ -12,7 +12,7 @@ class CarpoolsController < ApplicationController
   end
 
   def new
-    @carpool = current_user.carpools.build  
+    @carpool = current_user.carpools.new  
   end
 
  
@@ -31,7 +31,7 @@ class CarpoolsController < ApplicationController
 
 
   def update
-    @carpool = Carpool.find(params[:id])
+    @carpool = current_user.carpools.find(params[:id])
       if @carpool.update(carpool_params)
        redirect_to @carpool, notice: 'Carpool was successfully updated.' 
       else
@@ -40,6 +40,7 @@ class CarpoolsController < ApplicationController
   end
 
   def destroy
+    @carpool = current_user.carpools.find(params[:id])
     @carpool.destroy
     redirect_to carpools_url 
   end
